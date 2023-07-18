@@ -30,10 +30,18 @@ void rotate(int arr[], int n, int d)
         arr[n - d + i] = temp[i];
     }
 }
+void rotatebyPos(int arr[], int n, int d)
+{
+    d = d % n;
+    reverse(arr, arr + d);
+    reverse(arr + d, arr + n);
+    reverse(arr, arr + n);
+}
 int main()
 {
     int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    rotate(arr, 9, 3);
+    // rotate(arr, 9, 3);
+    rotatebyPos(arr, 9, 3);
     for (int i : arr)
     {
         cout << i << " ";
